@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan Putri & Aldi</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* BODY & BACKGROUND */
+    body {
+      font-family: 'Playfair Display', serif;
+      background: url('wed.png') no-repeat center center fixed;
+      background-size: cover;
+      background-color: #f0f0f0;
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* HEADER */
+    header {
+      background-color: rgba(240, 248, 255, 0.85);
+      padding: 120px 20px 80px;
+      border-bottom-left-radius: 50% 15%;
+      border-bottom-right-radius: 50% 15%;
+      color: #2c3e50;
+      box-shadow: 0 4px 15px rgba(44, 62, 80, 0.1);
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 70px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+    h2 {
+      font-size: 28px;
+      font-weight: 400;
+    }
+
+    /* RESPONSIVE HEADER */
+    @media (max-width: 576px) {
+      header {
+        padding: 90px 10px 60px;
+      }
+      h1 {
+        font-size: 45px;
+      }
+      h2 {
+        font-size: 18px;
+      }
+    }
+
+    /* SECTION */
+    section {
+      background-color: rgba(255, 255, 255, 0.60);
+      border-radius: 20px;
+      padding: 50px 20px;
+      margin: 30px auto;
+      max-width: 900px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 576px) {
+      section {
+        padding: 25px 15px;
+        margin: 20px 10px;
+      }
+    }
+
+    section h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .pembatas {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, #4682b4, #87cefa, #4682b4);
+      margin: 20px auto 25px;
+      border-radius: 3px;
+    }
+
+    /* MUSIC BUTTON */
+    .tombol-musik {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: #f0f8ff;
+      color: #2c3e50;
+      border: 2px solid #4682b4;
+      border-radius: 25px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(70, 130, 180, 0.2);
+      z-index: 9999;
+    }
+
+    @media (max-width: 576px) {
+      .tombol-musik {
+        padding: 8px 12px;
+        font-size: 13px;
+        right: 12px;
+        top: 12px;
+      }
+    }
+
+    /* GALLERY */
+    .galeri {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .photo-container {
+      width: 45%;
+      max-width: 180px;
+      aspect-ratio: 1 / 1;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      transition: 0.3s;
+      background: white;
+      position: relative;
+    }
+
+    .photo-container:hover {
+      transform: scale(1.05);
+    }
+
+    .photo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .photo-container:hover img {
+      transform: scale(1.1);
+    }
+
+    .photo-caption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.6));
+      color: white;
+      font-size: 14px;
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .photo-container:hover .photo-caption {
+      opacity: 1;
+    }
+
+    @media (max-width: 576px) {
+      .photo-container {
+        width: 48%;
+        max-width: none;
+      }
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 30px 20px;
+      background-color: rgba(255,255,255,0.9);
+      font-size: 16px;
+      color: #555;
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- MUSIC BUTTON -->
+  <button class="tombol-musik" id="musikButton">▶ Putar Musik</button>
+
+  <audio id="musikLatar" loop>
+    <source src="audio/komang.mp3" type="audio/mpeg">
+  </audio>
+
+  <header>
+    <h1>Putri & Ugo</h1>
+    <h2>Mengundang Anda Ke Pernikahan Kami</h2>
+  </header>
+
+  <!-- Couple Section -->
+  <section>
+    <h3>Pasangan Pengantin</h3>
+    <div class="pembatas"></div>
+    <p><strong>Putri Anggi Delia Rizky (Putri)</strong><br>Putri dari Bapak Deni Syahputra & Ibu Fitri Syawaliyah</p>
+    <p style="font-size:25px;">&</p>
+    <p><strong>Aldi Prayugo (Ugo)</strong><br>Putra dari Alm. Bapak Suherman & Ibu Nining</p>
+  </section>
+
+  <!-- Doa -->
+  <section>
+    <h3>Doa Pernikahan</h3>
+    <div class="pembatas"></div>
+    <p style="font-size:22px;">رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا</p>
+    <p>"Robbana hablana min azwaajinaa wa dzurriyyaatinaa qurrota a'yunin waj'alnaa lil-muttaqiina imaamaa"</p>
+    <p>"Ya Tuhan kami, anugerahkanlah kepada kami pasangan kami dan keturunan kami sebagai penyenang hati (kami), dan jadikanlah kami pemimpin bagi orang-orang yang bertakwa." (QS. Al-Furqan: 74)</p>
+  </section>
+
+  <!-- Tanggal & Lokasi -->
+  <section>
+    <h3>Tanggal & Lokasi</h3>
+    <div class="pembatas"></div>
+
+    <p>
+      Sabtu, 13 Desember 2025<br>
+      Pukul 10.00 WIB - Selesai<br><br>
+      Jl. Sidomulyo Gg. Perbatasan, Sei Rotan<br>
+      Percut Sei Tuan, Deli Serdang
+    </p>
+
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3784.923306294831!2d98.784582!3d3.599683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zM8KwMzUnNTguOSJOIDk4wrA0NycwNC41IkU!5e1!3m2!1sen!2sid!4v1764667613636!5m2!1sen!2sid" 
+      width="100%" height="250" 
+      style="border:0;" 
+      allowfullscreen=""
+      loading="lazy"
+      class="rounded shadow">
+    </iframe>
+
+    <br><br>
+    <a href="https://maps.app.goo.gl/Tay6e7q3UF752xXo6" class="btn btn-primary">📍 Buka di Google Maps</a>
+  </section>
+
+  <section>
+  <h3>Our Story</h3>
+    <div class="pembatas"></div>
+    <p>Kami pertama kali bertemu pada tahun 2023. Awalnya hanya percakapan ringan,
+            namun dari situlah semuanya mulai berubah. Tidak ada yang menduga bahwa
+            pertemuan sederhana itu akan membawa kami sejauh ini.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section>
+    <h3>Galeri</h3>
+    <div class="pembatas"></div>
+
+    <div class="galeri">
+      <div class="photo-container">
+        <img src="foto1.jpg">
+        <div class="photo-caption">Putri & Ugo</div>
+      </div>
+
+      <div class="photo-container">
+        <img src="foto2.jpg">
+        <div class="photo-caption">Momen Bahagia</div>
+      </div>
+
+      <div class="photo-container">
+        <img src="foto3.jpg">
+        <div class="photo-caption">Cinta Kami</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Countdown -->
+  <section>
+    <h3>Hitung Mundur</h3>
+    <div class="pembatas"></div>
+    <p id="hitungan"></p>
+  </section>
+
+  <!-- Terima kasih -->
+  <section>
+    <h3>Ucapan Terima Kasih</h3>
+    <div class="pembatas"></div>
+    <p>Atas doa & kehadiran Anda, kami mengucapkan terima kasih.</p>
+    <p style="font-family:'Great Vibes';font-size:26px;">Putri & Aldi</p>
+  </section>
+
+  <footer>
+    Dibuat dengan ❤️ oleh Putri & Ugo
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- SCRIPT MUSIC + COUNTDOWN -->
+  <script>
+    const musik = document.getElementById("musikLatar");
+    const tombol = document.getElementById("musikButton");
+
+    tombol.addEventListener("click", () => {
+      if (musik.paused) {
+        musik.play();
+        tombol.innerHTML = "⏸ Hentikan Musik";
+      } else {
+        musik.pause();
+        tombol.innerHTML = "▶ Putar Musik";
+      }
+    });
+
+    /* COUNTDOWN */
+    const target = new Date("December 13, 2025 10:00:00").getTime();
+    const hitungan = document.getElementById("hitungan");
+
+    setInterval(() => {
+      const now = Date.now();
+      const diff = target - now;
+
+      if (diff <= 0) {
+        hitungan.innerHTML = "Kami sudah menikah! 🎉";
+        return;
+      }
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+      hitungan.innerHTML = `
+        <b>${d}</b> Hari 
+        <b>${h}</b> Jam 
+        <b>${m}</b> Menit 
+        <b>${s}</b> Detik
+      `;
+    }, 1000);
+  </script>
+
+</body>
+</html>
